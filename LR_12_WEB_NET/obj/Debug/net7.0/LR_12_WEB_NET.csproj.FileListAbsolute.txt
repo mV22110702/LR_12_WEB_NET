@@ -30,3 +30,4 @@ E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\refi
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\LR_12_WEB_NET.pdb
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\LR_12_WEB_NET.genruntimeconfig.cache
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\ref\LR_12_WEB_NET.dll
+E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\LR_12_WEB_NET.sourcelink.json

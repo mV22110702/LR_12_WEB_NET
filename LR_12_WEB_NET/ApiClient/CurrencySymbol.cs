@@ -8,13 +8,22 @@ namespace LR_12_WEB_NET.ApiClient;
 public static class CurrencySymbol
 {
     /// <summary>
-    /// Get list of slugs.
+    /// Get list of symbols.
     /// <param name="ids">List of currency ids</param>
-    /// <returns>List of slugs</returns>
+    /// <returns>List of symbols</returns>
     /// </summary>
-    public static List<string> SymbolsToIds(List<CurrencyId> ids)
+    public static List<string> IdsToSymbols(List<CurrencyId> ids)
     {
         return ids.Select(id => IdToSymbolMap[id]).ToList();
+    }
+    /// <summary>
+    /// Get list of id numbers.
+    /// <param name="ids">List of currency ids</param>
+    /// <returns>List of id numbers</returns>
+    /// </summary>
+    public static List<int> IdsToNumbers(List<CurrencyId> ids)
+    {
+        return ids.Select(id => id.GetHashCode()).ToList();
     }
     /// <summary>
     /// Map of currency id to slug.

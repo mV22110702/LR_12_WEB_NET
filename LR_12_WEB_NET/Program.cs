@@ -1,5 +1,6 @@
 using System.Text.Json;
 using LR_12_WEB_NET.ApiClient;
+using LR_12_WEB_NET.Enums;
 using LR_12_WEB_NET.Models.Config;
 using NoobsMuc.Coinmarketcap.Client;
 
@@ -9,14 +10,15 @@ builder.Services.AddControllers();
 builder.Services.AddSignalR();
 
 ApiConfig? credentials = JsonSerializer.Deserialize<ApiConfig>(File.ReadAllText("creds.json"));
-if(credentials is null)
+if (credentials is null)
 {
     throw new Exception("Could not read API credentials");
 }
+
 builder.Services.AddSingleton(credentials);
 builder.Services.AddSingleton<CoinMarketApiClient>();
 var client = new CoinMarketApiClient(credentials);
-var res = await client.GetLatestListings(new GetLatestListingsOptions()); 
+var res = await client.GetLatestQuote(new GetLatestQuoteOptions() { Id = new List<CurrencyId>() { CurrencyId.Uah } });
 
 var app = builder.Build();
 
