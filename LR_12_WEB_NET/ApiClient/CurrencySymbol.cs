@@ -1,4 +1,5 @@
-﻿using LR_12_WEB_NET.Enums;
+﻿using System.Globalization;
+using LR_12_WEB_NET.Enums;
 
 namespace LR_12_WEB_NET.ApiClient;
 
@@ -7,6 +8,43 @@ namespace LR_12_WEB_NET.ApiClient;
 /// </summary>
 public static class CurrencySymbol
 {
+    // private static readonly List<string> ValidValues = CurrencySymbol.IdsToSymbols(
+    //     Enum.GetValues(typeof(CurrencyId)).OfType<int>().ToList()
+    // );
+    //
+    // public static bool IsValidSymbol(string? symbol)
+    // {
+    //     if (symbol == null)
+    //     {
+    //         return true;
+    //     }
+    //     CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+    //     TextInfo textInfo = cultureInfo.TextInfo;
+    //     return ValidValues.Contains(textInfo.ToTitleCase(symbol.ToLower()));
+    // }
+    public static List<CurrencyId> SymbolsToIds(List<string> symbols)
+    {
+        return symbols.Select<string,CurrencyId>(symbol =>
+        {
+            if (!Enum.TryParse(symbol, true, out CurrencyId currencyId))
+            {
+                throw new ArgumentOutOfRangeException(nameof(symbol), symbol, "Invalid currency symbol");
+            }
+
+            return currencyId;
+        }).ToList();
+    }
+    
+    public static CurrencyId SymbolToId(string symbol)
+    {
+        if (!Enum.TryParse(symbol, true, out CurrencyId currencyId))
+        {
+            throw new ArgumentOutOfRangeException(nameof(symbol), symbol, "Invalid currency symbol");
+        }
+
+        return currencyId;
+    }
+
     /// <summary>
     /// Get list of symbols.
     /// <param name="ids">List of currency ids</param>
@@ -16,6 +54,26 @@ public static class CurrencySymbol
     {
         return ids.Select(id => IdToSymbolMap[id]).ToList();
     }
+
+    /// <summary>
+    /// Get list of symbols.
+    /// <param name="ids">List of currency ids</param>
+    /// <returns>List of symbols</returns>
+    /// </summary>
+    public static List<string> IdsToSymbols(List<int> ids)
+    {
+        return ids.Select(id =>
+        {
+            if (!Enum.IsDefined(typeof(CurrencyId), id))
+            {
+                throw new ArgumentOutOfRangeException(nameof(id), id, "Invalid currency id");
+            }
+
+            CurrencyId currencyId = (CurrencyId)id;
+            return IdToSymbolMap[currencyId];
+        }).ToList();
+    }
+
     /// <summary>
     /// Get list of id numbers.
     /// <param name="ids">List of currency ids</param>
@@ -25,6 +83,7 @@ public static class CurrencySymbol
     {
         return ids.Select(id => id.GetHashCode()).ToList();
     }
+
     /// <summary>
     /// Map of currency id to slug.
     /// </summary>

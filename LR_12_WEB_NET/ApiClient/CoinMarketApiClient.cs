@@ -1,6 +1,5 @@
 ﻿using System.Web;
 using LR_12_WEB_NET.Models.Config;
-using Newtonsoft.Json;
 
 namespace LR_12_WEB_NET.ApiClient;
 
@@ -17,8 +16,11 @@ public class CoinMarketApiClient
         _client.DefaultRequestHeaders.Add("Accepts", "application/json");
     }
 
-    public async Task<GetLatestListingsResponse?> GetLatestListings(GetLatestListingsOptions options)
+    public async Task<GetLatestListingsResponse> GetLatestListings(GetLatestListingsOptions? options = null)
     {
+        if(options == null)
+            options = new GetLatestListingsOptions();
+        
         var URL = new UriBuilder("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest");
 
         var queryString = HttpUtility.ParseQueryString(string.Empty);

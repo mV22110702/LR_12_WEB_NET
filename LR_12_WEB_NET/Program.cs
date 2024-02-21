@@ -3,7 +3,7 @@ using LR_12_WEB_NET.ApiClient;
 using LR_12_WEB_NET.Enums;
 using LR_12_WEB_NET.Models.Config;
 using LR_12_WEB_NET.QuartzJobs.RenewListingsJob;
-using NoobsMuc.Coinmarketcap.Client;
+using LR_12_WEB_NET.Services;
 using Quartz;
 using Serilog;
 
@@ -25,19 +25,20 @@ if (credentials is null)
 }
 
 builder.Services.AddSingleton(credentials);
+builder.Services.AddSingleton<IListingService,ListingService>();
 
 builder.Services.AddSingleton<CoinMarketApiClient>();
 builder.Services.AddQuartz(q =>
 {
-    q.ScheduleJob<UpdateListingsJob>(trigger => trigger
-        .WithIdentity("UpdateListingsJob-Trigger")
-        .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
-        .WithDescription("Updates listing for all clients every 10 seconds")
-    );
+    // q.ScheduleJob<UpdateListingsJob>(trigger => trigger
+    //     .WithIdentity("UpdateListingsJob-Trigger")
+    //     .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
+    //     .WithDescription("Updates listing for all clients every 10 seconds")
+    // );
 
 });
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 var app = builder.Build();
-
+app.MapControllers();
 app.Run();

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NoobsMuc.Coinmarketcap.Client" Version="3.1.1" />
     <PackageReference Include="Quartz" Version="3.8.1" />
     <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.8.1" />
     <PackageReference Include="Quartz.Extensions.Hosting" Version="3.8.1" />

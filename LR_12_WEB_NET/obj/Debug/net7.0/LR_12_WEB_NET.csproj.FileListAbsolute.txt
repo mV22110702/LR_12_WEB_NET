@@ -6,10 +6,6 @@ E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\LR_1
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\LR_12_WEB_NET.runtimeconfig.json
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\LR_12_WEB_NET.dll
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\LR_12_WEB_NET.pdb
-E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\FubarCoder.RestSharp.Portable.Core.dll
-E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\FubarCoder.RestSharp.Portable.HttpClient.dll
-E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\Newtonsoft.Json.dll
-E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\NoobsMuc.Coinmarketcap.Client.dll
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\LR_12_WEB_NET.csproj.AssemblyReference.cache
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\LR_12_WEB_NET.GeneratedMSBuildEditorConfig.editorconfig
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\obj\Debug\net7.0\LR_12_WEB_NET.AssemblyInfoInputs.cache

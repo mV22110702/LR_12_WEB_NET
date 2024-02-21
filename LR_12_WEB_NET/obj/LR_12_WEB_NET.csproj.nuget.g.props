@@ -13,8 +13,4 @@
     <SourceRoot Include="C:\Users\user\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
-  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgFubarCoder_RestSharp_Portable_Core Condition=" '$(PkgFubarCoder_RestSharp_Portable_Core)' == '' ">C:\Users\user\.nuget\packages\fubarcoder.restsharp.portable.core\4.0.8</PkgFubarCoder_RestSharp_Portable_Core>
-    <PkgFubarCoder_RestSharp_Portable_HttpClient Condition=" '$(PkgFubarCoder_RestSharp_Portable_HttpClient)' == '' ">C:\Users\user\.nuget\packages\fubarcoder.restsharp.portable.httpclient\4.0.8</PkgFubarCoder_RestSharp_Portable_HttpClient>
-  </PropertyGroup>
 </Project>
