@@ -11,8 +11,8 @@ namespace LR_12_WEB_NET.Hubs;
 
 public interface ICurrencyHubClient
 {
-    public Task ReceiveListings(ResponseDto<object> options);
-    public Task ReceiveQuote(ResponseDto<object> options);
+    public Task ReceiveListings(ResponseDto<object> responseDto);
+    public Task ReceiveQuote(ResponseDto<object> responseDto);
 }
 
 public class CurrencyHub: Hub<ICurrencyHubClient>

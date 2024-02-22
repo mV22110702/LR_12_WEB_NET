@@ -8,30 +8,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="Structured model folders">
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/QuotesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/GetLatestQuoteDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/QuoteService/IQuoteService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/QuoteService/QuoteService.cs" afterDir="false" />
+    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/mocked-latest-listings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CurrencySymbol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CurrencySymbol.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Hubs/CurrencyHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Hubs/CurrencyHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Models/API/GetLatestListings/GetLatestListingsResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/API/GetLatestListings/GetLatestListingsResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/GetLatestListingsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/GetLatestListingsDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Services/IListingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/IListingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/ListingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/QuartzJobs/UpdateListingsJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/QuartzJobs/UpdateListingsJob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/QuartzJobs/UpdateQuoteJob.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/ListingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/ListingService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/rider.project.model.nuget.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +53,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/IO/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -66,7 +68,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.LR_12_WEB_NET: http.executor&quot;: &quot;Debug&quot;,
+    &quot;.NET Launch Settings Profile.LR_12_WEB_NET: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -129,7 +131,10 @@
       <workItem from="1708532773880" duration="358000" />
       <workItem from="1708533285093" duration="2289000" />
       <workItem from="1708535669040" duration="13856000" />
-      <workItem from="1708611202040" duration="5636000" />
+      <workItem from="1708611202040" duration="11214000" />
+      <workItem from="1708633683138" duration="1996000" />
+      <workItem from="1708636015569" duration="431000" />
+      <workItem from="1708636467567" duration="882000" />
     </task>
     <task id="LOCAL-00001" summary="Added get all listings api call (stopped at populating query string)">
       <option name="closed" value="true" />
@@ -195,7 +200,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708615848095</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added quote controller">
+      <option name="closed" value="true" />
+      <created>1708617738397</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708617738397</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Made hub response API to be coherent with REST API">
+      <option name="closed" value="true" />
+      <created>1708617857228</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708617857228</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Made hub response API to be coherent with REST API">
+      <option name="closed" value="true" />
+      <created>1708619264173</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708619264173</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,38 +239,8 @@
     <MESSAGE value="Stopped at fixing get listings service" />
     <MESSAGE value="Done listings controller" />
     <MESSAGE value="Structured model folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Structured model folders" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LR_12_WEB_NET/Middlewares/ExceptionMiddleware.cs</url>
-          <line>30</line>
-          <properties documentPath="E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\Middlewares\ExceptionMiddleware.cs" initialLine="30" containingFunctionPresentation="Method 'HandleExceptionAsync'">
-            <startOffsets>
-              <option value="646" />
-            </startOffsets>
-            <endOffsets>
-              <option value="698" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs</url>
-          <line>70</line>
-          <properties documentPath="E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\ApiClient\CoinMarketApiClient.cs" initialLine="70" containingFunctionPresentation="Method 'GetLatestListings'">
-            <startOffsets>
-              <option value="3259" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3318" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added quote controller" />
+    <MESSAGE value="Made hub response API to be coherent with REST API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made hub response API to be coherent with REST API" />
   </component>
 </project>

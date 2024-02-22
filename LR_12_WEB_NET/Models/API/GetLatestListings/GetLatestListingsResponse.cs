@@ -4,6 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
+public class Platform
+{
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
+
+    [JsonPropertyName("symbol")]
+    public string Symbol { get; set; }
+
+    [JsonPropertyName("slug")]
+    public string Slug { get; set; }
+
+    [JsonPropertyName("token_address")]
+    public string TokenAddress { get; set; }
+}
+
 public class Quote
 {
     [JsonPropertyName("price")] public double Price { get; set; }
@@ -62,13 +80,13 @@ public class Datum
 
     [JsonPropertyName("tags")] public List<string> Tags { get; set; }
 
-    [JsonPropertyName("platform")] public object Platform { get; set; }
+    [JsonPropertyName("platform")] public Platform? Platform { get; set; }
 
     [JsonPropertyName("self_reported_circulating_supply")]
-    public object SelfReportedCirculatingSupply { get; set; }
+    public float? SelfReportedCirculatingSupply { get; set; }
 
     [JsonPropertyName("self_reported_market_cap")]
-    public object SelfReportedMarketCap { get; set; }
+    public float? SelfReportedMarketCap { get; set; }
 
     [JsonPropertyName("quote")] public Dictionary<string, Quote> Quote { get; set; }
 }

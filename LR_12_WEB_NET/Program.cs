@@ -44,7 +44,15 @@ builder.Services.AddQuartz(q =>
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 var app = builder.Build();
+app.UseCors(builder =>
+{
+    builder.WithOrigins("http://localhost:5173");
+    builder.AllowAnyMethod();
+    builder.AllowAnyHeader();
+    builder.AllowCredentials();
+});
 app.UseExceptionHandling();
 app.MapControllers();
 app.MapHub<CurrencyHub>("/currencyHub");
+
 app.Run();

@@ -2,5 +2,5 @@
 
 public class GetLatestListingsDto
 {
-    public string ConvertId { get; set; }
+    public string? ConvertId { get; set; } = null!;
 }

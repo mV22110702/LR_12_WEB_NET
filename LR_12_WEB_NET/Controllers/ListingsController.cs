@@ -21,16 +21,17 @@ public class ListingsController : ControllerBase
     }
 
     [HttpPost("latest")]
-    public async Task<ResponseDto<GetLatestListingsResponse>> GetLatestListings([FromBody] GetLatestListingsDto dto)
+    public async Task<string> GetLatestListings([FromBody] GetLatestListingsDto dto)
     {
-        var response = await _listingService.GetLatestListings(dto);
-        Response.StatusCode = StatusCodes.Status200OK;
-        return new ResponseDto<GetLatestListingsResponse>
-        {
-            StatusCode = StatusCodes.Status200OK,
-            Values = new List<GetLatestListingsResponse> { response },
-            Description = "Success",
-            TotalRecords = 1
-        };
+       // var response = await _listingService.GetLatestListings(dto);
+       // Response.StatusCode = StatusCodes.Status200OK;
+       // return new ResponseDto<GetLatestListingsResponse>
+       // {
+       //     StatusCode = StatusCodes.Status200OK,
+       //     Values = new List<GetLatestListingsResponse> { response },
+       //     Description = "Success",
+        //    TotalRecords = 1
+        //};
+        return await System.IO.File.ReadAllTextAsync("mocked-latest-listings.json");
     }
 }

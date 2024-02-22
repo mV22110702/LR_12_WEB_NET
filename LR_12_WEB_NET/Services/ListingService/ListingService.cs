@@ -18,7 +18,9 @@ public class ListingService : IListingService
     {
         return await _coinMarketApiClient.GetLatestListings(new GetLatestListingsOptions()
         {
-            ConvertId = CurrencySymbol.NumbersToIds(dto.ConvertId.Split(",").Select(Int32.Parse).ToList()),
+            ConvertId = dto.ConvertId == null
+                ? null
+                : CurrencySymbol.NumbersToIds(dto.ConvertId.Split(",").Select(Int32.Parse).ToList()),
         });
     }
 }
