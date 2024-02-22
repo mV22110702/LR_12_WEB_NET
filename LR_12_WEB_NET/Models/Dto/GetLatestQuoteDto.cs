@@ -1,6 +1,7 @@
 ﻿namespace LR_12_WEB_NET.Dto;
 
-public class GetLatestListingsDto
+public class GetLatestQuoteDto
 {
+    public string Id { get; set; }
     public string ConvertId { get; set; }
 }

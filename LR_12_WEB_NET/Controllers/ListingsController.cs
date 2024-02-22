@@ -11,7 +11,7 @@ namespace LR_12_WEB_NET.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ListingsController: ControllerBase
+public class ListingsController : ControllerBase
 {
     private readonly IListingService _listingService;
 
@@ -20,30 +20,17 @@ public class ListingsController: ControllerBase
         _listingService = listingService;
     }
 
-    [HttpGet("latest")]
-    public async Task<ResponseDto<GetLatestListingsResponse>> GetLatestListings([FromQuery] string? convert)
+    [HttpPost("latest")]
+    public async Task<ResponseDto<GetLatestListingsResponse>> GetLatestListings([FromBody] GetLatestListingsDto dto)
     {
-        try
+        var response = await _listingService.GetLatestListings(dto);
+        Response.StatusCode = StatusCodes.Status200OK;
+        return new ResponseDto<GetLatestListingsResponse>
         {
-            var response = await _listingService.GetLatestListings(new GetLatestListingsDto()
-            {
-                Convert = convert
-            });
-            Response.StatusCode = StatusCodes.Status200OK;
-            return new ResponseDto<GetLatestListingsResponse>
-            {
-                StatusCode = StatusCodes.Status200OK,
-                Values = new List<GetLatestListingsResponse> { response },
-                Description = "Success",
-                TotalRecords = 1
-            };
-        }
-        catch (Exception ex)
-        {
-            Log.Error(ex.Message);
-            throw ex;
-        }
-
-       
+            StatusCode = StatusCodes.Status200OK,
+            Values = new List<GetLatestListingsResponse> { response },
+            Description = "Success",
+            TotalRecords = 1
+        };
     }
 }

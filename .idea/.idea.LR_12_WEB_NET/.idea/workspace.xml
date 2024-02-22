@@ -8,40 +8,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Dto/ResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Dto/ResponseDtoBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Extensions/IApplicationBuilderExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Middlewares/ExceptionMiddleware.cs" afterDir="false" />
+    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="Structured model folders">
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/QuotesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/GetLatestQuoteDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/QuoteService/IQuoteService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/QuoteService/QuoteService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CurrencySymbol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CurrencySymbol.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/GetLatestListingsResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/GetLatestListingsResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/GetLatestListingsDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/GetLatestListingsDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Services/IListingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/IListingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/ListingService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +129,7 @@
       <workItem from="1708532773880" duration="358000" />
       <workItem from="1708533285093" duration="2289000" />
       <workItem from="1708535669040" duration="13856000" />
-      <workItem from="1708611202040" duration="3639000" />
+      <workItem from="1708611202040" duration="5636000" />
     </task>
     <task id="LOCAL-00001" summary="Added get all listings api call (stopped at populating query string)">
       <option name="closed" value="true" />
@@ -173,7 +163,39 @@
       <option name="project" value="LOCAL" />
       <updated>1708550895399</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Done listings controller">
+      <option name="closed" value="true" />
+      <created>1708615658215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708615658220</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Structured model folders">
+      <option name="closed" value="true" />
+      <created>1708615814528</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708615814528</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Structured model folders">
+      <option name="closed" value="true" />
+      <created>1708615840032</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708615840032</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Structured model folders">
+      <option name="closed" value="true" />
+      <created>1708615848095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708615848095</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +208,9 @@
     <MESSAGE value="Added get latest quote" />
     <MESSAGE value="Added job to periodically update listings" />
     <MESSAGE value="Stopped at fixing get listings service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stopped at fixing get listings service" />
+    <MESSAGE value="Done listings controller" />
+    <MESSAGE value="Structured model folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Structured model folders" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -206,16 +230,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs</url>
-          <line>71</line>
-          <properties documentPath="E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\ApiClient\CoinMarketApiClient.cs" initialLine="68" containingFunctionPresentation="Method 'GetLatestListings'">
+          <line>70</line>
+          <properties documentPath="E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\ApiClient\CoinMarketApiClient.cs" initialLine="70" containingFunctionPresentation="Method 'GetLatestListings'">
             <startOffsets>
-              <option value="3326" />
+              <option value="3259" />
             </startOffsets>
             <endOffsets>
-              <option value="3354" />
+              <option value="3318" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

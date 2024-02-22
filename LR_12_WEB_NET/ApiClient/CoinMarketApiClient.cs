@@ -55,7 +55,7 @@ public class CoinMarketApiClient
         if (options.Convert != null)
             queryString["convert"] = String.Join(",", CurrencySymbol.IdsToSymbols(options.Convert));
         if (options.ConvertId != null)
-            queryString["convertId"] = String.Join(",", CurrencySymbol.IdsToNumbers(options.ConvertId));
+            queryString["convert_id"] = String.Join(",", CurrencySymbol.IdsToNumbers(options.ConvertId));
         if (options.CryptocurrencyType != null)
             queryString["sort"] = options.Sort;
         if (options.SortDir != null)
@@ -96,7 +96,7 @@ public class CoinMarketApiClient
         if (options.Convert != null)
             queryString["convert"] = String.Join(",", CurrencySymbol.IdsToSymbols(options.Convert));
         if (options.ConvertId != null)
-            queryString["convertId"] = String.Join(",", CurrencySymbol.IdsToNumbers(options.ConvertId));
+            queryString["convert_id"] = String.Join(",", CurrencySymbol.IdsToNumbers(options.ConvertId));
 
         URL.Query = queryString.ToString();
         

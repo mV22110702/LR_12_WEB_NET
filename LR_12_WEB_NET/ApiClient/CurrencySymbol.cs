@@ -52,25 +52,6 @@ public static class CurrencySymbol
     }
 
     /// <summary>
-    /// Get list of symbols.
-    /// <param name="ids">List of currency ids</param>
-    /// <returns>List of symbols</returns>
-    /// </summary>
-    public static List<string> IdsToSymbols(List<int> ids)
-    {
-        return ids.Select(id =>
-        {
-            if (!Enum.IsDefined(typeof(CurrencyId), id))
-            {
-                throw new ArgumentOutOfRangeException(nameof(id), id, "Invalid currency id");
-            }
-
-            CurrencyId currencyId = (CurrencyId)id;
-            return IdToSymbolMap[currencyId];
-        }).ToList();
-    }
-
-    /// <summary>
     /// Get list of id numbers.
     /// <param name="ids">List of currency ids</param>
     /// <returns>List of id numbers</returns>
@@ -78,6 +59,21 @@ public static class CurrencySymbol
     public static List<int> IdsToNumbers(List<CurrencyId> ids)
     {
         return ids.Select(id => id.GetHashCode()).ToList();
+    }
+    
+    public static List<CurrencyId> NumbersToIds(List<int> ids)
+    {
+        
+        return ids.Select(id =>
+        {
+            Enum.TryParse<CurrencyId>(id.ToString(), out CurrencyId currencyId);
+            if(!Enum.IsDefined<CurrencyId>(currencyId))
+            {
+                throw new ArgumentOutOfRangeException(nameof(id), id, "Invalid currency id");
+            }
+
+            return currencyId;
+        }).ToList();
     }
 
     /// <summary>
