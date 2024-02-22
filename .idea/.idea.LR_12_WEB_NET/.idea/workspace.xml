@@ -8,25 +8,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="Added job to periodically update listings">
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Dto/GetLatestListingsDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/QuartzJobs/UpdateQuoteJob.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/IListingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService.cs" afterDir="false" />
+    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Dto/ResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Dto/ResponseDtoBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Extensions/IApplicationBuilderExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Middlewares/ExceptionMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CurrencySymbol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CurrencySymbol.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/GetLatestListingsResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/GetLatestListingsResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/ListingsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/FubarCoder.RestSharp.Portable.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/FubarCoder.RestSharp.Portable.HttpClient.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/NoobsMuc.Coinmarketcap.Client.dll" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.assets.cache" afterDir="false" />
@@ -40,7 +37,6 @@
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.packagespec.json" afterDir="false" />
@@ -61,6 +57,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/126d294e60611672b701cf36b224d60423da2ba461472cb1872a7849892ea/CoinmarketcapClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c196664a12f5125027b72b2568e6340b65853dad3e85f11c71d98d471e9d5/ICoinmarketcapClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/db5711e9ca5dfdb3481358696b74dae132c4c1bbf5eb688aacff8c22fd7ae33/CoinmarketcapData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/432e6a061f28dda696ba16bc5442328d23b25d93/src/Http/Routing/src/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/ArgumentOutOfRangeException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/IO/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/97203d38ba734d76d39984c5206f2747f792fa89/src/libraries/System.Private.CoreLib/src/System/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -73,28 +74,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.LR_12_WEB_NET: http.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.LR_12_WEB_NET: http.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\user\\AppData\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\user\\AppData\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\user\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\user\\AppData\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\user\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.LR_12_WEB_NET: http">
     <configuration name="LR_12_WEB_NET: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" />
@@ -137,7 +138,8 @@
       <updated>1708532768517</updated>
       <workItem from="1708532773880" duration="358000" />
       <workItem from="1708533285093" duration="2289000" />
-      <workItem from="1708535669040" duration="13556000" />
+      <workItem from="1708535669040" duration="13856000" />
+      <workItem from="1708611202040" duration="3639000" />
     </task>
     <task id="LOCAL-00001" summary="Added get all listings api call (stopped at populating query string)">
       <option name="closed" value="true" />
@@ -163,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708547083963</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Stopped at fixing get listings service">
+      <option name="closed" value="true" />
+      <created>1708550895399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708550895399</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +185,39 @@
     <MESSAGE value="Added get all listings api call (stopped at populating query string)" />
     <MESSAGE value="Added get latest quote" />
     <MESSAGE value="Added job to periodically update listings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added job to periodically update listings" />
+    <MESSAGE value="Stopped at fixing get listings service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stopped at fixing get listings service" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LR_12_WEB_NET/Middlewares/ExceptionMiddleware.cs</url>
+          <line>30</line>
+          <properties documentPath="E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\Middlewares\ExceptionMiddleware.cs" initialLine="30" containingFunctionPresentation="Method 'HandleExceptionAsync'">
+            <startOffsets>
+              <option value="646" />
+            </startOffsets>
+            <endOffsets>
+              <option value="698" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs</url>
+          <line>71</line>
+          <properties documentPath="E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\ApiClient\CoinMarketApiClient.cs" initialLine="68" containingFunctionPresentation="Method 'GetLatestListings'">
+            <startOffsets>
+              <option value="3326" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3354" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

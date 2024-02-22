@@ -24,23 +24,19 @@ public static class CurrencySymbol
     // }
     public static List<CurrencyId> SymbolsToIds(List<string> symbols)
     {
-        return symbols.Select<string,CurrencyId>(symbol =>
-        {
-            if (!Enum.TryParse(symbol, true, out CurrencyId currencyId))
-            {
-                throw new ArgumentOutOfRangeException(nameof(symbol), symbol, "Invalid currency symbol");
-            }
-
-            return currencyId;
-        }).ToList();
+        return symbols.Select<string,CurrencyId>(SymbolToId).ToList();
     }
     
     public static CurrencyId SymbolToId(string symbol)
     {
-        if (!Enum.TryParse(symbol, true, out CurrencyId currencyId))
+        CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+        TextInfo textInfo = cultureInfo.TextInfo;
+        if (!Enum.GetNames<CurrencyId>().Contains(textInfo.ToTitleCase(symbol.ToLower())))
         {
             throw new ArgumentOutOfRangeException(nameof(symbol), symbol, "Invalid currency symbol");
         }
+
+        Enum.TryParse(symbol, true, out CurrencyId currencyId);
 
         return currencyId;
     }

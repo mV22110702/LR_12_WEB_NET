@@ -4,6 +4,7 @@ using LR_12_WEB_NET.Enums;
 using LR_12_WEB_NET.Models.Config;
 using LR_12_WEB_NET.QuartzJobs.RenewListingsJob;
 using LR_12_WEB_NET.Services;
+using LR6_WEB_NET.Extensions;
 using Quartz;
 using Serilog;
 
@@ -40,5 +41,7 @@ builder.Services.AddQuartz(q =>
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
 var app = builder.Build();
+app.UseExceptionHandling();
 app.MapControllers();
+
 app.Run();

@@ -1,5 +1,9 @@
-﻿using System.Web;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Web;
 using LR_12_WEB_NET.Models.Config;
+using Serilog;
+using Newtonsoft.Json;
 
 namespace LR_12_WEB_NET.ApiClient;
 
@@ -64,7 +68,9 @@ public class CoinMarketApiClient
             queryString["tag"] = options.Tag;
 
         URL.Query = queryString.ToString();
-        var responseBody = await _client.GetFromJsonAsync<GetLatestListingsResponse>(URL.Uri);
+        var responseString = await _client.GetStringAsync(URL.Uri);
+        Log.Warning(responseString);
+        var responseBody = JsonConvert.DeserializeObject<GetLatestListingsResponse>(responseString);
         if (responseBody == null)
         {
             throw new Exception("Could not parse response from CoinMarketCap API");
@@ -94,7 +100,9 @@ public class CoinMarketApiClient
 
         URL.Query = queryString.ToString();
         
-        GetLatestQuoteResponse? responseBody = await _client.GetFromJsonAsync<GetLatestQuoteResponse>(URL.Uri);
+        var responseString = await _client.GetStringAsync(URL.Uri);
+        Log.Warning(responseString);
+        var responseBody = JsonConvert.DeserializeObject<GetLatestQuoteResponse>(responseString);
         if (responseBody == null)
         {
             throw new Exception("Could not parse response from CoinMarketCap API");

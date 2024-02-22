@@ -67,3 +67,7 @@ E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\runt
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
 E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\System.Web.Http.dll
+E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\Newtonsoft.Json.dll
+E:\projects\University\ASP_NET\LR_12_WEB_NET\LR_12_WEB_NET\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
