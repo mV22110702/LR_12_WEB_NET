@@ -1,6 +1,7 @@
 using System.Text.Json;
 using LR_12_WEB_NET.ApiClient;
 using LR_12_WEB_NET.Enums;
+using LR_12_WEB_NET.Hubs;
 using LR_12_WEB_NET.Models.Config;
 using LR_12_WEB_NET.QuartzJobs.RenewListingsJob;
 using LR_12_WEB_NET.Services;
@@ -45,5 +46,5 @@ builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 var app = builder.Build();
 app.UseExceptionHandling();
 app.MapControllers();
-
+app.MapHub<CurrencyHub>("/currencyHub");
 app.Run();
