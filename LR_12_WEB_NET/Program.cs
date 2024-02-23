@@ -28,18 +28,17 @@ if (credentials is null)
 }
 
 builder.Services.AddSingleton(credentials);
-builder.Services.AddSingleton<IListingService,ListingService>();
-builder.Services.AddSingleton<IQuoteService,QuoteService>();
+builder.Services.AddSingleton<IListingService, ListingService>();
+builder.Services.AddSingleton<IQuoteService, QuoteService>();
 
 builder.Services.AddSingleton<CoinMarketApiClient>();
 builder.Services.AddQuartz(q =>
 {
-    // q.ScheduleJob<UpdateListingsJob>(trigger => trigger
-    //     .WithIdentity("UpdateListingsJob-Trigger")
-    //     .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
-    //     .WithDescription("Updates listing for all clients every 10 seconds")
-    // );
-
+    q.ScheduleJob<UpdateListingsJob>(trigger => trigger
+        .WithIdentity("UpdateListingsJob-Trigger")
+        .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
+        .WithDescription("Updates listing for all clients every 10 seconds")
+    );
 });
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 

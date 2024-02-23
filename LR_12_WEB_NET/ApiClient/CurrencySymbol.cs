@@ -8,25 +8,23 @@ namespace LR_12_WEB_NET.ApiClient;
 /// </summary>
 public static class CurrencySymbol
 {
-    // private static readonly List<string> ValidValues = CurrencySymbol.IdsToSymbols(
-    //     Enum.GetValues(typeof(CurrencyId)).OfType<int>().ToList()
-    // );
-    //
-    // public static bool IsValidSymbol(string? symbol)
-    // {
-    //     if (symbol == null)
-    //     {
-    //         return true;
-    //     }
-    //     CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
-    //     TextInfo textInfo = cultureInfo.TextInfo;
-    //     return ValidValues.Contains(textInfo.ToTitleCase(symbol.ToLower()));
-    // }
+    /// <summary>
+    /// Converts string symbols to enums
+    /// </summary>
+    /// <param name="symbols"></param>
+    /// <returns></returns>
+    ///<exception cref="ArgumentOutOfRangeException">Invalid currency symbol</exception>
     public static List<CurrencyId> SymbolsToIds(List<string> symbols)
     {
-        return symbols.Select<string,CurrencyId>(SymbolToId).ToList();
+        return symbols.Select<string, CurrencyId>(SymbolToId).ToList();
     }
-    
+
+    /// <summary>
+    /// Converts string symbol to enum
+    /// </summary>
+    /// <param name="symbol"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException">Invalid currency symbol</exception>
     public static CurrencyId SymbolToId(string symbol)
     {
         CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -60,20 +58,33 @@ public static class CurrencySymbol
     {
         return ids.Select(id => id.GetHashCode()).ToList();
     }
-    
+
+    /// <summary>
+    /// Converts list of numbers to list of enums
+    /// </summary>
+    /// <param name="ids"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException">Invalid currency id</exception>
     public static List<CurrencyId> NumbersToIds(List<int> ids)
     {
-        
-        return ids.Select(id =>
-        {
-            Enum.TryParse<CurrencyId>(id.ToString(), out CurrencyId currencyId);
-            if(!Enum.IsDefined<CurrencyId>(currencyId))
-            {
-                throw new ArgumentOutOfRangeException(nameof(id), id, "Invalid currency id");
-            }
+        return ids.Select(NumberToId).ToList();
+    }
 
-            return currencyId;
-        }).ToList();
+    /// <summary>
+    /// Converts number to enum
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException">Invalid currency id</exception>
+    public static CurrencyId NumberToId(int id)
+    {
+        Enum.TryParse<CurrencyId>(id.ToString(), out CurrencyId currencyId);
+        if (!Enum.IsDefined<CurrencyId>(currencyId))
+        {
+            throw new ArgumentOutOfRangeException(nameof(id), id, "Invalid currency id");
+        }
+
+        return currencyId;
     }
 
     /// <summary>

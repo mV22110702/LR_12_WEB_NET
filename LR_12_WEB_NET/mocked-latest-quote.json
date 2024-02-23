@@ -1,0 +1,59 @@
+﻿{
+  "totalRecords": 1,
+  "values": [
+    {
+      "data": {
+        "2781": {
+          "id": 2781,
+          "name": "United States Dollar",
+          "symbol": "USD",
+          "slug": "united-states-dollar",
+          "is_active": 0,
+          "is_fiat": 0,
+          "cmc_rank": null,
+          "num_market_pairs": 0,
+          "circulating_supply": 0,
+          "total_supply": 0,
+          "market_cap_by_total_supply": 0,
+          "max_supply": null,
+          "date_added": "0001-01-01T00:00:00",
+          "tags": [],
+          "platform": null,
+          "last_updated": "0001-01-01T00:00:00",
+          "self_reported_circulating_supply": null,
+          "self_reported_market_cap": null,
+          "quote": {
+            "2824": {
+              "price": 38.283130999993226,
+              "volume_24h": 0,
+              "volume_change_24h": 0,
+              "volume_24h_reported": 0,
+              "volume_7d": 0,
+              "volume_7d_reported": 0,
+              "volume_30d": 0,
+              "volume_30d_reported": 0,
+              "market_cap": 0,
+              "market_cap_dominance": 0,
+              "fully_diluted_market_cap": 0,
+              "percent_change_1h": 0,
+              "percent_change_24h": 0,
+              "percent_change_7d": 0,
+              "percent_change_30d": 0,
+              "last_updated": "0001-01-01T00:00:00"
+            }
+          }
+        }
+      },
+      "status": {
+        "timestamp": "2024-02-23T14:28:22.108Z",
+        "error_code": 0,
+        "error_message": null,
+        "elapsed": 47,
+        "credit_count": 0,
+        "notice": null
+      }
+    }
+  ],
+  "description": "Success",
+  "statusCode": 200
+}

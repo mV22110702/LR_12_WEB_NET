@@ -1,7 +1,10 @@
 ﻿using System.Net;
 using System.Web.Http;
 using LR_12_WEB_NET.ApiClient;
+using LR_12_WEB_NET.Dto;
+using LR_12_WEB_NET.Enums;
 using LR_12_WEB_NET.Models.Config;
+using LR_12_WEB_NET.Services.QuoteService;
 using LR6_WEB_NET.Models.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
@@ -11,18 +14,34 @@ namespace LR_12_WEB_NET.Hubs;
 
 public interface ICurrencyHubClient
 {
-    public Task ReceiveListings(ResponseDto<object> responseDto);
-    public Task ReceiveQuote(ResponseDto<object> responseDto);
+    public Task ReceiveLatestListings(ResponseDto<object> responseDto);
+    public Task ReceiveLatestQuote(ResponseDto<object> responseDto);
+    public Task ReceiveError(ResponseDto<object> responseDto);
 }
 
-public class CurrencyHub: Hub<ICurrencyHubClient>
+public class CurrencyHub : Hub<ICurrencyHubClient>
 {
-    public async Task GetListings(GetLatestListingsOptions options, [FromServices] ApiConfig config)
+    public static readonly IDictionary<string, CurrencyId>
+        ConnectionIdToTargetCurrencyMap = new Dictionary<string, CurrencyId>();
+
+    public async Task SetConnectionTargetCurrency(int id)
     {
         try
         {
-            var client = new CoinMarketApiClient(config);
-            var response = await client.GetLatestListings(options);
+            var currencyId = CurrencySymbol.NumberToId(id);
+            ConnectionIdToTargetCurrencyMap[Context.ConnectionId] = currencyId;
+        }
+        catch (Exception ex)
+        {
+            await HandleExceptionResponseAsync(ex);
+        }
+    }
+
+    public async Task GetLatestQuote(GetLatestQuoteDto dto, [FromServices] IQuoteService quoteService)
+    {
+        try
+        {
+            var response = await quoteService.GetLatestQuote(dto);
             var responseDto = new ResponseDto<object>
             {
                 StatusCode = StatusCodes.Status200OK,
@@ -30,36 +49,22 @@ public class CurrencyHub: Hub<ICurrencyHubClient>
                 Description = "Success",
                 TotalRecords = 1
             };
-            await Clients.Caller.ReceiveListings(responseDto);
+            await Clients.Caller.ReceiveLatestQuote(responseDto);
         }
         catch (Exception ex)
         {
-            
+            await HandleExceptionResponseAsync(ex);
         }
     }
-    
-    public async Task GetQuote(GetLatestQuoteOptions options, [FromServices] ApiConfig config)
+
+    private async Task HandleExceptionResponseAsync(Exception rawException)
     {
-        try
-        {
-            var client = new CoinMarketApiClient(config);
-            var response = await client.GetLatestQuote(options);
-            var responseDto = new ResponseDto<object>
-            {
-                StatusCode = StatusCodes.Status200OK,
-                Values = new List<object> { response },
-                Description = "Success",
-                TotalRecords = 1
-            };
-            await Clients.Caller.ReceiveQuote(responseDto);
-        }
-        catch (Exception ex)
-        {
-            await Clients.Caller.ReceiveQuote(await HandleExceptionAsync(ex));
-        }
+        var responseDto = await GenerateExceptionResponse(rawException);
+        responseDto.StatusCode = (int)HttpStatusCode.BadRequest;
+        await Clients.Caller.ReceiveError(responseDto);
     }
-    
-    private async Task<ResponseDto<object>> HandleExceptionAsync(Exception rawException)
+
+    private async Task<ResponseDto<object>> GenerateExceptionResponse(Exception rawException)
     {
         if (rawException is HttpResponseException exception)
         {
