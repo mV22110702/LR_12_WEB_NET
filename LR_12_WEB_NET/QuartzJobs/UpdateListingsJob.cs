@@ -28,7 +28,7 @@ public class UpdateListingsJob : IJob
             {
                 var currencyId = CurrencyHub.ConnectionIdToTargetCurrencyMap[connectionId];
                 var response = await _listingService.GetLatestListings(new GetLatestListingsDto
-                    { ConvertId = currencyId.ToString() });
+                    { ConvertId = currencyId.GetHashCode().ToString() });
                 var responseDto = new ResponseDto<object>
                 {
                     StatusCode = StatusCodes.Status200OK,
