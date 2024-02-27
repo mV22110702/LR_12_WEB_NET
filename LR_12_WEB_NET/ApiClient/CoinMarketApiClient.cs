@@ -9,23 +9,19 @@ namespace LR_12_WEB_NET.ApiClient;
 
 public class CoinMarketApiClient
 {
-    private readonly string API_KEY;
-    private readonly HttpClient _client;
+    private readonly IHttpClientFactory _httpClientFactory;
 
-    public CoinMarketApiClient(ApiConfig config)
+    public CoinMarketApiClient(IHttpClientFactory httpClientFactory)
     {
-        API_KEY = config.CoinMarketApiKey;
-        _client = new HttpClient();
-        _client.DefaultRequestHeaders.Add("X-CMC_PRO_API_KEY", API_KEY);
-        _client.DefaultRequestHeaders.Add("Accepts", "application/json");
+        _httpClientFactory = httpClientFactory;
     }
 
     public async Task<GetLatestListingsResponse> GetLatestListings(GetLatestListingsOptions? options = null)
     {
         if(options == null)
             options = new GetLatestListingsOptions();
-        
-        var URL = new UriBuilder("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest");
+        var httpClient = _httpClientFactory.CreateClient(HttpClientNames.CoinMarketApi);
+        var url = new UriBuilder("v1/cryptocurrency/listings/latest");
 
         var queryString = HttpUtility.ParseQueryString(string.Empty);
         if (options.Start.HasValue)
@@ -67,8 +63,8 @@ public class CoinMarketApiClient
         if (options.Tag != null)
             queryString["tag"] = options.Tag;
 
-        URL.Query = queryString.ToString();
-        var responseString = await _client.GetStringAsync(URL.Uri);
+        url.Query = queryString.ToString();
+        var responseString = await httpClient.GetStringAsync(url.Uri);
         Log.Warning(responseString);
         var responseBody = JsonConvert.DeserializeObject<GetLatestListingsResponse>(responseString);
         if (responseBody == null)
@@ -81,7 +77,8 @@ public class CoinMarketApiClient
 
     public async Task<GetLatestQuoteResponse> GetLatestQuote(GetLatestQuoteOptions options)
     {
-        var URL = new UriBuilder("https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest");
+        var httpClient = _httpClientFactory.CreateClient(HttpClientNames.CoinMarketApi);
+        var url = new UriBuilder("https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest");
 
         var queryString = HttpUtility.ParseQueryString(string.Empty);
         if (options.Id == null && options.Symbol == null)
@@ -98,9 +95,9 @@ public class CoinMarketApiClient
         if (options.ConvertId != null)
             queryString["convert_id"] = String.Join(",", CurrencySymbol.IdsToNumbers(options.ConvertId));
 
-        URL.Query = queryString.ToString();
+        url.Query = queryString.ToString();
         
-        var responseString = await _client.GetStringAsync(URL.Uri);
+        var responseString = await httpClient.GetStringAsync(url.Uri);
         Log.Warning(responseString);
         var responseBody = JsonConvert.DeserializeObject<GetLatestQuoteResponse>(responseString);
         if (responseBody == null)

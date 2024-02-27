@@ -5,5 +5,5 @@ namespace LR_12_WEB_NET.Services;
 
 public interface IListingService
 {
-    public Task<GetLatestListingsResponse> GetLatestListings(GetLatestListingsDto options);
+    public Task<GetLatestListingsResponse?> GetLatestListings(GetLatestListingsDto options);
 }
