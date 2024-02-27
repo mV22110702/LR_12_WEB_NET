@@ -21,6 +21,6 @@ public class SmtpConfig
     public string From { get; set; }
 
     [JsonRequired]
-    [JsonPropertyName("To")]
+    [JsonPropertyName("to")]
     public string To { get; set; }
 }

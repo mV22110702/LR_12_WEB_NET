@@ -1,15 +1,25 @@
 using System.Net;
+using System.Text;
 using System.Text.Json;
 using LR_12_WEB_NET.ApiClient;
+using LR_12_WEB_NET.Data.DatabaseContext;
 using LR_12_WEB_NET.Enums;
 using LR_12_WEB_NET.Hubs;
 using LR_12_WEB_NET.Jobs;
 using LR_12_WEB_NET.Models.Config;
 using LR_12_WEB_NET.QuartzJobs;
 using LR_12_WEB_NET.Services;
+using LR_12_WEB_NET.Services.AuthService;
 using LR_12_WEB_NET.Services.QuoteService;
+using LR_12_WEB_NET.Services.UserRoleService;
+using LR_12_WEB_NET.Services.UserService;
 using LR6_WEB_NET.Extensions;
+using LR6_WEB_NET.Models.Database;
+using LR6_WEB_NET.Models.Enums;
 using MailKit.Security;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Quartz;
 using Serilog;
 using Serilog.Events;
@@ -53,7 +63,15 @@ if (credentials is null)
     throw new Exception("Could not read API credentials");
 }
 
-
+builder.Services
+    .AddScoped<IAuthService,
+        AuthService>();
+builder.Services
+    .AddScoped<IUserRoleService,
+        UserRoleService>();
+builder.Services
+    .AddScoped<IUserService,
+        UserService>();
 builder.Services.AddSingleton(credentials);
 builder.Services.AddSingleton<IListingService, ListingService>();
 builder.Services.AddSingleton<IQuoteService, QuoteService>();
@@ -91,6 +109,33 @@ builder.Services.AddQuartz(q =>
 builder.Services.AddHostedService<FrontendHealthCheckHostedService>();
 builder.Services.AddHostedService<ApiListingCacheHostedService>();
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        if (builder.Configuration["Jwt:Key"] == null) throw new Exception("Jwt:Key is not set in appsettings.json");
+
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey =
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? "secret"))
+        };
+    });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole(UserRole.UserRoleNames[UserRoleName.Admin]));
+    options.AddPolicy("User", policy => policy.RequireRole(UserRole.UserRoleNames[UserRoleName.User]));
+});
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 var app = builder.Build();
 app.UseCors(builder =>
@@ -100,6 +145,7 @@ app.UseCors(builder =>
     builder.AllowAnyHeader();
     builder.AllowCredentials();
 });
+app.UseAuthorization();
 app.UseExceptionHandling();
 app.MapControllers();
 app.MapHub<CurrencyHub>("/currencyHub");

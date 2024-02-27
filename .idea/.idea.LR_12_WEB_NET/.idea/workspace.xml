@@ -8,24 +8,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ConfigurationOptions/HttpClientNames.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ConfigurationOptions/SmtpConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Jobs/ApiListingCacheHostedService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Jobs/FrontendHealthCheckHostedService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ApiListingCacheHostedService/IApiListingCacheHostedService.cs" afterDir="false" />
+    <list default="true" id="44d943ae-a4ae-433f-9dfc-b8bacafd9339" name="Changes" comment="Made all background services, stopped at adding bg service for DB logging">
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Controllers/AuthController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Data/DatabaseContext/DataContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Database/User.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Database/UserRole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/AuthResponseDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/UserLoginDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/UserRegisterDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Dto/UserUpdateDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/EntityTypeConfiguration/UserConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/EntityTypeConfiguration/UserRoleConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/Enums/UserRoleName.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Models/ValidationAttributes/OneOfAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/AuthService/AuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/AuthService/IAuthService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/Service/IService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/UserRoleService/IUserRoleService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/UserRoleService/UserRoleService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/UserService/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/UserService/UserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LR_12_WEB_NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ApiClient/CoinMarketApiClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/ConfigurationOptions/SmtpConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/ConfigurationOptions/SmtpConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/LR_12_WEB_NET.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/QuartzJobs/UpdateListingsJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/QuartzJobs/UpdateListingsJob.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/IListingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/Services/ListingService/IListingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/LR_12_WEB_NET.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/bin/Debug/net7.0/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/LR_12_WEB_NET.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/ref/LR_12_WEB_NET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/Debug/net7.0/refint/LR_12_WEB_NET.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/LR_12_WEB_NET.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/LR_12_WEB_NET/obj/project.packagespec.json" afterDir="false" />
@@ -138,7 +165,7 @@
       <workItem from="1708685792417" duration="2589000" />
       <workItem from="1708689347620" duration="9671000" />
       <workItem from="1708723477157" duration="1375000" />
-      <workItem from="1709036921022" duration="6490000" />
+      <workItem from="1709036921022" duration="8375000" />
     </task>
     <task id="LOCAL-00001" summary="Added get all listings api call (stopped at populating query string)">
       <option name="closed" value="true" />
@@ -260,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708724794803</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Made all background services, stopped at adding bg service for DB logging">
+      <option name="closed" value="true" />
+      <created>1709043788979</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709043788979</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +315,8 @@
     <MESSAGE value="Mocked latest listings response" />
     <MESSAGE value="Done converter" />
     <MESSAGE value="Fixed params for dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed params for dto" />
+    <MESSAGE value="Made all background services, stopped at adding bg service for DB logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made all background services, stopped at adding bg service for DB logging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
