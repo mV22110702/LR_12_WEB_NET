@@ -10,6 +10,7 @@ using LR_12_WEB_NET.Models.Config;
 using LR_12_WEB_NET.QuartzJobs;
 using LR_12_WEB_NET.Services;
 using LR_12_WEB_NET.Services.AuthService;
+using LR_12_WEB_NET.Services.BackgroundEmailNotificationTaskQueue;
 using LR_12_WEB_NET.Services.QuoteService;
 using LR_12_WEB_NET.Services.UserRoleService;
 using LR_12_WEB_NET.Services.UserService;
@@ -35,19 +36,6 @@ if (smtpConfig is null)
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.Email(new EmailSinkOptions()
-    {
-        From = smtpConfig.From,
-        To = new List<string>() { smtpConfig.To },
-        Host = smtpConfig.Host,
-        Port = smtpConfig.Port,
-        Credentials = new NetworkCredential("apikey",
-            smtpConfig?.SendGridApiKey ?? string.Empty),
-        ConnectionSecurity = SecureSocketOptions.None,
-        Subject = new MessageTemplateTextFormatter(
-            "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz}] [{Level}]: [{SourceContext}] [{EventId}] {Message}{NewLine}{Exception} {Properties:j}"
-        ),
-    }, restrictedToMinimumLevel: LogEventLevel.Error)
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
@@ -72,7 +60,7 @@ builder.Services
 builder.Services
     .AddScoped<IUserService,
         UserService>();
-builder.Services.AddSingleton(credentials);
+builder.Services.AddSingleton<IBackgroundEmailNotificationQueue, BackgroundEmailNotificationQueue>();
 builder.Services.AddSingleton<IListingService, ListingService>();
 builder.Services.AddSingleton<IQuoteService, QuoteService>();
 builder.Services.AddMemoryCache();
@@ -100,14 +88,10 @@ builder.Services.AddQuartz(q =>
         .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
         .WithDescription("Updates listing for all clients every 10 seconds")
     );
-    q.ScheduleJob<UpdateListingsJob>(trigger => trigger
-        .WithIdentity("UpdateListingsJob-Trigger")
-        .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
-        .WithDescription("Updates listing for all clients every 10 seconds")
-    );
 });
 builder.Services.AddHostedService<FrontendHealthCheckHostedService>();
 builder.Services.AddHostedService<ApiListingCacheHostedService>();
+builder.Services.AddHostedService<EmailNotificationBackgroundService>();
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

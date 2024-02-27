@@ -3,6 +3,8 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Web.Http;
+using LR_12_WEB_NET.Models.Dto;
+using LR_12_WEB_NET.Services.BackgroundEmailNotificationTaskQueue;
 using LR_12_WEB_NET.Services.UserService;
 using LR6_WEB_NET.Models.Database;
 using LR6_WEB_NET.Models.Dto;
@@ -16,9 +18,12 @@ public class AuthService : IAuthService
     private readonly IConfiguration _config;
     private readonly ILogger<AuthService> _logger;
     private readonly IUserService _userService;
+    private readonly IBackgroundEmailNotificationQueue _backgroundEmailNotificationQueue;
 
-    public AuthService(ILogger<AuthService> logger, IConfiguration config, IUserService userService)
+    public AuthService(ILogger<AuthService> logger, IConfiguration config, IUserService userService,
+        IBackgroundEmailNotificationQueue backgroundEmailNotificationQueue)
     {
+        _backgroundEmailNotificationQueue = backgroundEmailNotificationQueue;
         _logger = logger;
         _config = config;
         _userService = userService;
@@ -45,8 +50,8 @@ public class AuthService : IAuthService
                 { StatusCode = HttpStatusCode.BadRequest, Content = new StringContent("Passwords do not match") });
         }
 
-        await this._userService.UpdateOne(user.Id,new UserUpdateDto(){LastLogin = DateTime.Now});
-        
+        await this._userService.UpdateOne(user.Id, new UserUpdateDto() { LastLogin = DateTime.Now });
+
         _logger.LogInformation($"User {user.Id} logged in");
         return new AuthResponseDto
         {
@@ -62,6 +67,11 @@ public class AuthService : IAuthService
                 { StatusCode = HttpStatusCode.BadRequest, Content = new StringContent("User already exists") });
 
         user = await _userService.AddOne(userRegisterDto);
+        await _backgroundEmailNotificationQueue.QueueBackgroundWorkItemAsync(new EmailNotificationDto
+        {
+            Body =
+                $"User {user.Id} has registered successfully (email:{user.Email})"
+        });
         return new AuthResponseDto
         {
             Token = CreateToken(user)

@@ -1,6 +1,7 @@
 ﻿using LR_12_WEB_NET.Models.Config;
 using Serilog;
 using Serilog.Core;
+using Serilog.Events;
 
 namespace LR_12_WEB_NET.Jobs;
 
@@ -14,7 +15,9 @@ public class FrontendHealthCheckHostedService : BackgroundService
     {
         _httpClientFactory = httpClientFactory;
         _logger = new LoggerConfiguration()
-            .WriteTo.File("./frontend-check.json")
+            .WriteTo.File("./frontend-check.json", restrictedToMinimumLevel: LogEventLevel.Information,
+                rollingInterval: RollingInterval.Day,
+                outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
             .CreateLogger();
     }
 
@@ -34,6 +37,7 @@ public class FrontendHealthCheckHostedService : BackgroundService
             _logger.Error("Frontend cannot be reached: {ReasonPhrase}", res.ReasonPhrase ?? string.Empty);
             return;
         }
+
         _logger.Information("Frontend is healthy");
     }
 
