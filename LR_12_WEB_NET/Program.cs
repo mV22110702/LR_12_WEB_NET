@@ -11,6 +11,8 @@ using LR_12_WEB_NET.QuartzJobs;
 using LR_12_WEB_NET.Services;
 using LR_12_WEB_NET.Services.AuthService;
 using LR_12_WEB_NET.Services.BackgroundEmailNotificationTaskQueue;
+using LR_12_WEB_NET.Services.ListingsMemoryCache;
+using LR_12_WEB_NET.Services.ListingsMemoryCacheService;
 using LR_12_WEB_NET.Services.QuoteService;
 using LR_12_WEB_NET.Services.UserRoleService;
 using LR_12_WEB_NET.Services.UserService;
@@ -60,6 +62,7 @@ builder.Services
 builder.Services
     .AddScoped<IUserService,
         UserService>();
+builder.Services.AddSingleton(smtpConfig);
 builder.Services.AddSingleton<IBackgroundEmailNotificationQueue, BackgroundEmailNotificationQueue>();
 builder.Services.AddSingleton<IListingService, ListingService>();
 builder.Services.AddSingleton<IQuoteService, QuoteService>();
@@ -89,6 +92,8 @@ builder.Services.AddQuartz(q =>
         .WithDescription("Updates listing for all clients every 10 seconds")
     );
 });
+builder.Services.AddSingleton<IListingsMemoryCache, ListingsMemoryCache>();
+builder.Services.AddSingleton<IListingsMemoryCacheService, ListingsMemoryCacheService>();
 builder.Services.AddHostedService<FrontendHealthCheckHostedService>();
 builder.Services.AddHostedService<ApiListingCacheHostedService>();
 builder.Services.AddHostedService<EmailNotificationBackgroundService>();

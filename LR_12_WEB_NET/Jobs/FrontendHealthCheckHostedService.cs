@@ -30,15 +30,21 @@ public class FrontendHealthCheckHostedService : BackgroundService
 
     private async void PingFrontend(object? state)
     {
-        var client = _httpClientFactory.CreateClient(HttpClientNames.FrontEnd);
-        var res = await client.GetAsync("");
-        if (!res.IsSuccessStatusCode)
+        try
         {
-            _logger.Error("Frontend cannot be reached: {ReasonPhrase}", res.ReasonPhrase ?? string.Empty);
-            return;
-        }
+            var client = _httpClientFactory.CreateClient(HttpClientNames.FrontEnd);
+            var res = await client.GetAsync("/");
+            if (!res.IsSuccessStatusCode)
+            {
+                _logger.Error("Frontend cannot be reached: {ReasonPhrase}", res.ReasonPhrase ?? string.Empty);
+                return;
+            }
 
-        _logger.Information("Frontend is healthy");
+            _logger.Information("Frontend is healthy");
+        } catch (Exception e)
+        {
+            _logger.Error(e, "Error occurred while pinging frontend");
+        }
     }
 
     public override Task StopAsync(CancellationToken cancellationToken)
